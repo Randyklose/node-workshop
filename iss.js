@@ -17,11 +17,13 @@
       else {
         var coordinates = JSON.parse(response.body);
         
-        var longitude = parseFloat(coordinates.iss_position.longitude).toFixed(2)
+        var longitude = parseFloat(coordinates.iss_position.longitude).toFixed(2);
         var latitude = parseFloat(coordinates.iss_position.latitude).toFixed(2);
    
            console.log(coordinates);
-           console.log(latitude, longitude)
+           console.log(latitude, longitude);
       }
-})
+});
+
+
 

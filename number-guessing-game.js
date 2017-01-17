@@ -7,9 +7,10 @@
   */
   var prompt = require('prompt');
   var randomNum = Math.floor(Math.random() * 100);
-  
+  var c= 0;
   function guessNum() {
-      console.log(randomNum);
+      c++;
+    //   console.log(randomNum);
       console.log("Guess a number between 1 and 100");
       prompt.get(['number'],function(err, result) {
       if(err) {
@@ -19,18 +20,18 @@
       var number = parseInt(result.number);
           if (number < randomNum ){
               console.log("Try a higher number");
-              return guessNum();
+               guessNum();
           }
           else if(number > randomNum) {
               console.log("Try a lower number");
-              return guessNum();
+               guessNum();
           }
           else if(number === randomNum) {
-              console.log("You guessed right!!!");
+              console.log(`You guessed correctly in ${c} tries.`)
           }
           else {
               console.log("That is not a number");
-              return guessNum();
+               guessNum();
           }
       }
       
